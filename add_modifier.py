@@ -38,7 +38,11 @@ class AddModifier(bpy.types.Operator):
 
         if context.active_operator and context.active_operator.bl_idname == "OBJECT_OT_modifier_add":
             mod = context.active_operator.properties.get('type')
+            # ng = context.active_operator.properties.get('asset_library_identifier')
+            # print(mod)
+            # print(ng)
             modifier_types = bpy.types.Modifier.bl_rna.properties['type'].enum_items
+            # nodegroup_types = bpy.types.Modifier.bl_rna.properties['asset_library_identifier'].enum_items
             mod_type = None
 
             for modifier_type in modifier_types:
